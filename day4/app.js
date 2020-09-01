@@ -8,6 +8,12 @@ app.use(express.static(__dirname+"/assets"));
 app.get("/", function(req, res){
     res.render("home");
 });
+app.get("/col", function (req, res) {
+    res.render("col");
+});
+app.get("/button", function (req, res) {
+    res.render("button");
+});
 
 
 
