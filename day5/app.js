@@ -1,25 +1,18 @@
 var express = require("express");
 var app = express();
+var routes = require("./config/routes");
+
 
 app.set("view engine", "ejs");
+
+
 app.use(express.static(__dirname+"/assets"));  // ------- css, js(client), image, audio, video, etc
-
-app.get("/", (req, res)=>{
-    var obj = { pagename : "home/index"};
-    res.render("layout", obj);
-})
-app.get("/about", (req, res) => {
-    var obj = { pagename: "about/index" };
-    res.render("layout", obj);
-})
-
-app.get("/login", (req, res) => {
-    var obj = { pagename: "login/index" };
-    res.render("layout", obj);
-})
+/*
+    app.use() is call auto before any other app.get() call
 
 
-
+*/
+app.use(routes);
 
 
 app.listen(3000, ()=>{

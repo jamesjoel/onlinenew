@@ -1,5 +1,6 @@
 <html>
       <head>
+          <title><%= title %></title>
         <link type="text/css" rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" />
         <link type="text/css" rel="stylesheet" href="/css/style.css" />
         <script src="/jquery/dist/jquery.js"></script>
@@ -44,6 +45,17 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Recipies</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Help
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/help/info">Info</a>
+                                <a class="dropdown-item" href="/help">Help Us</a>
+                                
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact Us</a>
