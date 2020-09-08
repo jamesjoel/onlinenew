@@ -1,0 +1,74 @@
+<h3 class="text-center">List of All Student</h3>
+<br />
+<button data-toggle="modal" data-target="#addModal" class="btn btn-success mx-auto d-block">Add New</button>
+<br />
+<div class="col-md-8 offset-md-2">
+    <table class="table table-dark table-bordered">
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <% student.forEach(function(x, i){ %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= x.name %></td>
+                <td><%= x.age %></td>
+                <td><%= x.city %></td>
+            </tr>
+        <% }) %>
+
+
+
+    </table>
+</div>
+
+<div id="addModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <form action="/student" method="post">
+            <div class="modal-header">
+                <h3>Add New Student</h3>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control" name="name"/>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="text" class="form-control" name="age"/>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <select class="form-control" name="city">
+                        <option value="">Select</option>
+                        <option value="indore">Indore</option>
+                        <option value="ujjain">Ujjain</option>
+                        <option value="bhopal">Bhopal</option>
+                        <option value="pune">Pune</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="mumbai">Mumbai</option>
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
