@@ -1,0 +1,21 @@
+<div class="row">
+    <% product.forEach(function(x){ %>
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-header">
+                <h4><%= x.title %></h4>
+            </div>
+            <div class="card-body">
+                <img src="/images/<%= x.image %>" height="100" width="300"/>
+                <br />
+                <strong>&#8377; <%= x.price %></strong>
+            </div>
+            <div class="card-footer">
+                <a href="/product/view/<%= x._id %>" class="btn btn-warning btn-sm">View</a>
+            </div>
+        </div>
+    </div>
+
+    <% }) %>
+</div>

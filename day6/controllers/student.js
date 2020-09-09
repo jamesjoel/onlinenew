@@ -1,7 +1,12 @@
 var express = require("express");
 var routes = express.Router();
 
+
+
+
 var MongoClient = require("mongodb").MongoClient;
+var mongodb = require("mongodb");
+
 var url = "mongodb://localhost:27017";
 
 routes.get("/info", (req, res)=>{
@@ -10,6 +15,20 @@ routes.get("/info", (req, res)=>{
 routes.get("/demo", (req, res) => {
     res.send("this is student->demo page");
 });
+// :3000/student/delete/1245785214752
+routes.get("/delete/:a", (req, res)=>{
+    
+    var id = req.params.a;
+    MongoClient.connect(url, (err, con)=>{
+        var db = con.db("newbatch");
+        db.collection("student").remove({ _id : mongodb.ObjectId(id) }, (err, result)=>{
+            //console.log(result);
+            res.redirect("/student");
+        });
+    });
+  
+});
+
 
 
 routes.post("/", (req, res)=>{
@@ -18,7 +37,7 @@ routes.post("/", (req, res)=>{
     MongoClient.connect(url, (err, con)=>{
         var db = con.db("newbatch");
         db.collection("student").insert(req.body, (err, result)=>{
-            console.log(result);
+            //console.log(result);
             res.redirect("/student");
         });
         
@@ -81,7 +100,7 @@ module.exports = routes;
         db.collection("coll_name").update({object},{where condi}, (err, result)=>{
 
         });
-        db.collection("coll_name").remove({where condi}, (err, result)=>{
+        db.collection("coll_name").remove({ city : "indore" }, (err, result)=>{
 
         });
 
