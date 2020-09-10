@@ -19,7 +19,7 @@
                 <td><%= x.name %></td>
                 <td><%= x.age %></td>
                 <td><%= x.city %></td>
-                <td><a href="#" class="btn btn-info btn-sm">Edit</a></td>
+                <td><a href="/student/edit/<%= x._id %>" class="btn btn-info btn-sm">Edit</a></td>
                 <td><a href="/student/delete/<%= x._id %>" class="btn btn-danger btn-sm">Delete</a></td>
             </tr>
         <% }) %>
