@@ -9,6 +9,10 @@ var mongodb = require("mongodb");
 
 var url = "mongodb://localhost:27017";
 
+routes.get("/hello", (req, res)=>{
+    console.log(req.session);
+})
+
 routes.get("/info", (req, res)=>{
     res.send("this is student->info page");
 });
