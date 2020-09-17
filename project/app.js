@@ -15,6 +15,25 @@ app.use(session({ secret : "my project name"}));
 app.use(flash());
 
 
+app.use(function(req, res, next){ // whan any routes in the application, the this function is called
+    // console.log("hello world");
+    res.locals.a = "TSS";
+    res.locals.session = req.session;
+    // res.locals is a pre-defined object which can auto avalable on every .ejs(views)
+    next();
+    // the next() function is determined to continue
+    /*
+    we can not write these code here
+        res.redirect()
+        res.render()
+        res.send()
+        res.sendFile()
+
+    */
+});
+
+
+
 app.use(require("./config/routes"));
 
 app.listen(3000, () => {

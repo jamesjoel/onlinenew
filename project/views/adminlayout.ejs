@@ -17,17 +17,21 @@
         
             <!-- Navbar links -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <!-- <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li>
-                </ul> -->
+                <% if(session.is_admin_logged_in)
+                { %>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/addproduct">Add Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/admin/viewproduct">View Product</a>
+                        </li>
+                    </ul>
+
+                <% } %>
             </div>
         </nav>
 

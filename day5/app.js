@@ -8,7 +8,7 @@ app.set("view engine", "ejs");
 
 app.use(express.static(__dirname+"/assets"));  // ------- css, js(client), image, audio, video, etc
 /*
-    app.use() is call auto before any other app.get() call
+    app.use() is call auto before any other app.get(), app.post() call
 
 
 */
