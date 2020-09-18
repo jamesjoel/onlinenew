@@ -5,6 +5,8 @@ var bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
 var session = require("express-session");
 var flash = require("express-flash");
+var fileupload = require("express-fileupload");
+
 
 
 app.set("view engine", "ejs");
@@ -13,6 +15,8 @@ app.use(bodyParser());
 app.use(cookieParser());
 app.use(session({ secret : "my project name"}));
 app.use(flash());
+app.use(fileupload());
+
 
 
 app.use(function(req, res, next){ // whan any routes in the application, the this function is called
