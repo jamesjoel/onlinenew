@@ -1,3 +1,11 @@
+<style>
+    .add_to_cart{
+        background-color:#000;
+        color:#FFF !important;
+        padding:5px;
+        border-radius : 3px;
+    }
+</style>
 <section class="main-content">
     <div class="row">
         <div class="span12">
@@ -29,6 +37,7 @@
                             <a href="products.html" class="category"><%= row.category %></a>
                             <p class="price"><del>$<%= row.price %></del></p>
                             <p class="price">$<%= newprice %></p>
+                            <a href="/cart/add/<%= row._id %>" class="add_to_cart">Add to Cart</a>
                         </div>
                     </div>
                             

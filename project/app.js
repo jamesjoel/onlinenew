@@ -23,6 +23,12 @@ app.use(function(req, res, next){ // whan any routes in the application, the thi
     // console.log("hello world");
     res.locals.a = "TSS";
     res.locals.session = req.session;
+    res.locals.cart="";
+    if(req.cookies.cart)
+    {
+        res.locals.cart = req.cookies.cart;
+    }
+
     // res.locals is a pre-defined object which can auto avalable on every .ejs(views)
     next();
     // the next() function is determined to continue

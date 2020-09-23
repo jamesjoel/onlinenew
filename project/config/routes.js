@@ -5,6 +5,7 @@ routes.use("/", require("../controller/home"));
 routes.use("/login", require("../controller/login"));
 routes.use("/signup", require("../controller/signup"));
 routes.use("/myaccount", require("../controller/myaccount"));
+routes.use("/cart", require("../controller/cart"));
 
 routes.use("/admin", require("./adminroute"));
 

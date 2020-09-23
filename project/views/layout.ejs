@@ -1,3 +1,13 @@
+<%= //cart %>
+<%
+    var arr = cart.split("#");
+    var total = arr.length;
+
+
+%>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,7 +55,7 @@
 
 
                         <li><a href="/">Home</a></li>
-                        <li><a href="cart.html">Your Cart</a></li>
+                        <li><a href="/cart">Your Cart (<%= total %>)</a></li>
                         <li><a href="checkout.html">Checkout</a></li>
                         <% if(session.is_user_logged_in){ %> 
                             <li><a href="/myaccount">My Account</a></li>
