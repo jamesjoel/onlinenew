@@ -1,1 +1,54 @@
-<p>about works!</p>
+<h2>This is About Page</h2>
+
+<h4>{{ name }}</h4>
+
+<!-- <p>{{ arr[0] }}</p>
+<p>{{ arr[1] }}</p>
+<p>{{ arr[2] }}</p>
+<p>{{ arr[3] }}</p> -->
+
+<p>{{ obj.second }}</p>
+<Hr />
+<h3>{{ a+b }}</h3>
+<hr />
+<ul>
+    <li *ngFor="let x of arr">
+        {{ x }}
+    </li>
+</ul>
+<hr />
+
+<!-- {{ this is called Interpolation }} -->
+
+<!-- 
+    we don't have any loop excapt of (*ngFor)
+
+    that means we do not use
+            1. for
+            2. while
+            3. do---while
+            4. foreach
+    in the view/html page
+
+
+
+ -->
+<button (click)="demo()">OK</button>
+
+ <table class="table table-hover table-success table-brodered table-striped">
+     <tr>
+         <th>S.No.</th>
+         <th>Name</th>
+         <th>Age</th>
+         <th>City</th>
+     </tr>
+     <tr *ngFor="let x of jsonObj; let n = index">
+        <td>{{ n+1 }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.age }}</td>
+        <td>{{ x.city }}</td>
+    </tr>
+
+
+
+ </table>
