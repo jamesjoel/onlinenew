@@ -1,0 +1,37 @@
+<h4>Conditional Statements in Angular</h4>
+<ol>
+    <li>*ngIf</li>
+    <li>*ngIf  .... else</li>
+    <li>[ngIf]...... [ngIfElse]</li>
+    <li>[ngSwitch].....*ngSwitchCase</li>
+</ol>
+<h2 *ngIf="a==10 && b=='rohit'">
+    Hello Indore
+</h2>
+<hr />
+<h2 *ngIf="a==12; else demo">
+    If Condition is TRUE
+</h2>
+<ng-template #demo>
+    <h2>
+        If Condition is FALSE
+    </h2>
+</ng-template>
+<hr />
+<ng-template [ngIf]="b=='roht'" [ngIfElse]="demo2">
+    <h2>If Condition is TRUE for []...</h2>
+</ng-template>
+<ng-template #demo2>
+    <h2>
+        If Condition is FALSE for []...
+    </h2>
+</ng-template>
+<hr />
+
+<div [ngSwitch]="x">
+    <p *ngSwitchCase="'blue'">This is Blue</p>
+    <p *ngSwitchCase="'yellow'">This is Yellow</p>
+    <p *ngSwitchCase="'red'">This is Red</p>
+    <p *ngSwitchCase="'green'">This is Green</p>
+    <p *ngSwitchDefault>This is Default Case</p>
+</div>

@@ -1,2 +1,22 @@
-<p>home works!</p>
-<app-box1></app-box1>
+<h2>DataBinding</h2>
+<h3>{{ name }}</h3>
+<input type='text' value="{{ name }}"/>
+<br />
+<br />
+<input type="text" [(ngModel)]="name" />
+
+<Br />
+<h3>{{ city }}</h3>
+<Br />
+<select [(ngModel)]="city">
+    <option value="ujjain">Ujjain</option>
+    <option value="mumbai">Mumbai</option>
+    <option value="indore">Indore</option>
+</select>
+<Br />
+<Br />
+<h3>{{ gender }}</h3>
+<br />
+Male<input type="radio" [(ngModel)]="gender" value="male"/>
+Female<input type="radio" [(ngModel)]="gender" value="female"/>
+
