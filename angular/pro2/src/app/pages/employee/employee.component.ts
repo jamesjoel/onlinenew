@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
+  employee={
+    name : "",
+    age : null,
+    city : ""
+  };
+
+
   employes = [
     {
       name : "rohit",
@@ -24,5 +31,40 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit() {
   }
+  add(){
+    // console.log(this.employee);
+    this.employes.push(this.employee);
+    
+
+  }
+  empty(){
+    this.employee={
+      name : "",
+      age : null,
+      city : ""
+    }
+  }
+
+  askDelete(obj){
+    this.employee = obj;
+  }
+  delete(){
+    /*
+    var array = ['red', 'green', 'blue', 'yellow'];
+    var z = 'blue';
+
+    var n = array.indexOf(z);
+
+    array.splice(n, 1);
+
+    */
+    var n = this.employes.indexOf(this.employee);
+    this.employes.splice(n, 1);
+
+  }
+
+
+
+
 
 }

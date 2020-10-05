@@ -1,3 +1,5 @@
+// 2 - way databinding ... 
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
