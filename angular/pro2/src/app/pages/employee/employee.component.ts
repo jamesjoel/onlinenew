@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
+  index=null;
   employee={
+    id : null,
     name : "",
     age : null,
     city : ""
@@ -16,11 +18,13 @@ export class EmployeeComponent implements OnInit {
 
   employes = [
     {
+      id : 1,
       name : "rohit",
       age : 25,
       city : "indore"
     },
     {
+      id : 2,
       name : "jaya",
       age : 30,
       city : "mumbai"
@@ -33,12 +37,31 @@ export class EmployeeComponent implements OnInit {
   }
   add(){
     // console.log(this.employee);
-    this.employes.push(this.employee);
+    if(this.employee.id) // that mean data going to update
+    {
+      // for(let i=0; i<this.employes.length; i++)
+      // {
+      //   if(this.employes[i].id == this.employee.id)
+      //   {
+      //     this.employes[i]=this.employee;
+      //     break;
+      //   }
+      // }
+      this.employes[this.index]=this.employee;
+    }
+    else{ // that means data going to add
+
+      var n = this.employes.length;
+      n++;
+      this.employee.id = n;
+      this.employes.push(this.employee);
+    }
     
 
   }
   empty(){
     this.employee={
+      id : null,
       name : "",
       age : null,
       city : ""
@@ -61,6 +84,12 @@ export class EmployeeComponent implements OnInit {
     var n = this.employes.indexOf(this.employee);
     this.employes.splice(n, 1);
 
+  }
+  askEdit(obj){
+    // this.employee = obj;
+    // break 2 way data binding
+    this.index = this.employes.indexOf(obj);
+    this.employee = {...obj};
   }
 
 

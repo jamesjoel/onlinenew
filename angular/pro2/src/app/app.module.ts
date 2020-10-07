@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +16,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
+import { DemoComponent } from './pages/demo/demo.component';
 
 @NgModule({
   declarations: [
@@ -24,12 +28,14 @@ import { EmployeeComponent } from './pages/employee/employee.component';
     HeaderComponent,
     FooterComponent,
     HelpComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
