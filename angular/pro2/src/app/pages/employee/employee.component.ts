@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-employee',
@@ -9,35 +10,28 @@ export class EmployeeComponent implements OnInit {
 
   index=null;
   employee={
-    id : null,
+    _id : null,
     name : "",
     age : null,
     city : ""
   };
 
 
-  employes = [
-    {
-      id : 1,
-      name : "rohit",
-      age : 25,
-      city : "indore"
-    },
-    {
-      id : 2,
-      name : "jaya",
-      age : 30,
-      city : "mumbai"
-    }
-  ]
+  employes;
 
-  constructor() { }
+  constructor(private _http : HttpClient) { 
+    this._http.get("http://localhost:3000/api/employee").subscribe((data)=>{
+      this.employes = data;
+    });
+
+
+  }
 
   ngOnInit() {
   }
   add(){
     // console.log(this.employee);
-    if(this.employee.id) // that mean data going to update
+    if(this.employee._id) // that mean data going to update
     {
       // for(let i=0; i<this.employes.length; i++)
       // {
@@ -51,17 +45,21 @@ export class EmployeeComponent implements OnInit {
     }
     else{ // that means data going to add
 
-      var n = this.employes.length;
+      this._http.post("http://localhost:3000/api/employee", this.employee).subscribe((data)=>{
+        console.log(data);
+        this.employes.push(data);
+      });
+      /*var n = this.employes.length;
       n++;
       this.employee.id = n;
-      this.employes.push(this.employee);
+      */
     }
     
 
   }
   empty(){
     this.employee={
-      id : null,
+      _id : null,
       name : "",
       age : null,
       city : ""
@@ -81,8 +79,11 @@ export class EmployeeComponent implements OnInit {
     array.splice(n, 1);
 
     */
-    var n = this.employes.indexOf(this.employee);
-    this.employes.splice(n, 1);
+    this._http.delete("http://localhost:3000/api/employee/"+this.employee._id).subscribe((data)=>{
+      // console.log(data);
+      var n = this.employes.indexOf(this.employee);
+      this.employes.splice(n, 1);
+    });
 
   }
   askEdit(obj){

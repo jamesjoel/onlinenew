@@ -1,5 +1,5 @@
 <h2>List of Employee</h2>
-<pre>{{ employes | json }}</pre>
+<!-- <pre>{{ employes | json }}</pre> -->
 <button data-toggle="modal" data-target="#addModal" (click)="empty()" class="btn btn-info">Add New</button>
 <br />
 <table class="table table-dark mt-3">
@@ -48,7 +48,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>{{ employee.id ? 'Update' : 'Add'}} Student</h2>
+                <h2>{{ employee._id ? 'Update' : 'Add'}} Student</h2>
             </div>
             <div class="modal-body">
                 <div class="form-group">
@@ -71,7 +71,7 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-danger" data-dismiss="modal" >Close</button>
-                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">{{ employee.id ? 'Update' : 'Add' }}</button>
+                <button class="btn btn-primary" data-dismiss="modal" (click)="add()">{{ employee._id ? 'Update' : 'Add' }}</button>
             </div>
         </div>
     </div>
