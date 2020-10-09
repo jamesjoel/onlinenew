@@ -40,8 +40,39 @@ app.delete("/api/employee/:id", (req, res)=>{
 
 });
 
+app.put("/api/employee/:id", (req, res)=>{
+    // console.log(req.body);
+    var id = req.params.id;
+    delete req.body._id;
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("newbatch");
+        db.collection("employee").update({ _id : mongo.ObjectId(id)}, { $set : req.body }, (err, result)=>{
+            console.log(result);
+            res.send(result);
+        })
+    })
+
+});
+
+
+
 // app.put()
 
+
+
+
+
+
+
+
+app.get("/api/product", (req, res)=>{
+    MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
+        var db = con.db("newbatch");
+        db.collection("product").find().toArray((err, result)=>{
+            res.send(result);
+        })
+    })
+})
 
 
 
@@ -62,5 +93,22 @@ app.listen(3000, ()=>{
     res.render()
     res.redirect()
     res.sendFile()
+
+*/
+
+
+
+
+/*
+
+this is an REST Full API -----www.demo.com/api/products
+
+.get()   ----- getting all data
+.post()  ----- insert
+.delete() ----www.demo.com/api/products/12   ---- delete
+.put() ---- www.demo.com/api/products/15 + obj ---- update
+
+
+
 
 */

@@ -6,6 +6,7 @@ import { DemoComponent } from './pages/demo/demo.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductComponent } from './pages/product/product.component';
 
 
 
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path : "demo",
     component : DemoComponent
+  },
+  {
+    path : "product",
+    component : ProductComponent
   }
 ];
 

@@ -17,6 +17,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { DemoComponent } from './pages/demo/demo.component';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DemoComponent } from './pages/demo/demo.component';
     FooterComponent,
     HelpComponent,
     EmployeeComponent,
-    DemoComponent
+    DemoComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,

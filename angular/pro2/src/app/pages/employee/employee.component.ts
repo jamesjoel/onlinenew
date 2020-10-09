@@ -33,6 +33,10 @@ export class EmployeeComponent implements OnInit {
     // console.log(this.employee);
     if(this.employee._id) // that mean data going to update
     {
+      this._http.put("http://localhost:3000/api/employee/"+this.employee._id, this.employee).subscribe((data)=>{
+        console.log(data);
+        this.employes[this.index]=this.employee;
+      });
       // for(let i=0; i<this.employes.length; i++)
       // {
       //   if(this.employes[i].id == this.employee.id)
@@ -41,7 +45,6 @@ export class EmployeeComponent implements OnInit {
       //     break;
       //   }
       // }
-      this.employes[this.index]=this.employee;
     }
     else{ // that means data going to add
 
@@ -98,3 +101,34 @@ export class EmployeeComponent implements OnInit {
 
 
 }
+
+
+
+/*
+  1. this._http.get(url).subscribe((data)=>{
+
+  })
+
+  2. this._http.post(url, obj).subscribe((data)=>{
+
+  })
+
+  3. this._http.delete(url+id).subscribe((data)=>{
+
+  })
+
+  4. this._http.put(url+id, obj).subscribe((data)=>{
+
+
+  })
+
+
+
+
+
+
+
+
+
+*/
+
