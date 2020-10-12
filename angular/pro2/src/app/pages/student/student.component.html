@@ -1,0 +1,15 @@
+<p>student works!</p>
+<p>{{ drop }}</p>
+<br />
+<input type="text" [(ngModel)]="txtName" /><button (click)="demo()">Go</button>
+<Br />
+<Br />
+<select [(ngModel)]="drop">
+    <option>Select</option>
+    <option *ngFor="let c of city">{{ c }}</option>
+</select>
+<button (click)="demo2()">GO</button>
+
+
+<hr />
+<app-minibox [childName]="name" [xName]="newName" [cDrop]="x"></app-minibox>

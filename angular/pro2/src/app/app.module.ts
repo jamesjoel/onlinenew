@@ -18,6 +18,8 @@ import { HelpComponent } from './pages/help/help.component';
 import { EmployeeComponent } from './pages/employee/employee.component';
 import { DemoComponent } from './pages/demo/demo.component';
 import { ProductComponent } from './pages/product/product.component';
+import { StudentComponent } from './pages/student/student.component';
+import { MiniboxComponent } from './shared/minibox/minibox.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ProductComponent } from './pages/product/product.component';
     HelpComponent,
     EmployeeComponent,
     DemoComponent,
-    ProductComponent
+    ProductComponent,
+    StudentComponent,
+    MiniboxComponent
   ],
   imports: [
     BrowserModule,

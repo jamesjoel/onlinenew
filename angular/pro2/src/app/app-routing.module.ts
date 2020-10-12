@@ -7,6 +7,7 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { HelpComponent } from './pages/help/help.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductComponent } from './pages/product/product.component';
+import { StudentComponent } from './pages/student/student.component';
 
 
 
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path : "product",
     component : ProductComponent
+  },
+  {
+    path : "student",
+    component : StudentComponent
   }
 ];
 
