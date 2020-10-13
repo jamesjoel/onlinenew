@@ -1,0 +1,8 @@
+<h2>Data Passing Parent to Child and Child to Parent</h2>
+Address <textarea [(ngModel)]="address"></textarea>
+<button (click)="go()">GO</button>
+<p>{{ parentVar }}</p> 
+
+<hr />
+<hr />
+<app-minitest [childVar]="x" (anyFunc)="demo($event)"></app-minitest>

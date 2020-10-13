@@ -20,6 +20,8 @@ import { DemoComponent } from './pages/demo/demo.component';
 import { ProductComponent } from './pages/product/product.component';
 import { StudentComponent } from './pages/student/student.component';
 import { MiniboxComponent } from './shared/minibox/minibox.component';
+import { TestComponent } from './pages/test/test.component';
+import { MinitestComponent } from './shared/minitest/minitest.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MiniboxComponent } from './shared/minibox/minibox.component';
     DemoComponent,
     ProductComponent,
     StudentComponent,
-    MiniboxComponent
+    MiniboxComponent,
+    TestComponent,
+    MinitestComponent
   ],
   imports: [
     BrowserModule,
