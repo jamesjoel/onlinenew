@@ -11,4 +11,9 @@ export class LoginService {
   addUser(obj){
     return this._http.post("http://localhost:3000/api/user", obj);
   }
+  doLogin(obj){
+    return this._http.post("http://localhost:3000/api/user/login", obj);
+  }
+
+
 }

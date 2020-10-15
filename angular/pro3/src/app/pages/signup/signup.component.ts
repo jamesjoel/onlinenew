@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  errorMsg="";
   user={
     full_name : "",
     username : "",
@@ -47,6 +48,12 @@ export class SignupComponent implements OnInit {
     this._loginServ.addUser(this.user).subscribe((data)=>{
       console.log("----", data);
       this._router.navigate(["/login"]); 
+    }, (errResponse)=>{
+      //console.log(errResponse); 
+      if(errResponse.error.success == false)
+      {
+        this.errorMsg = "This Username/Email Allready use !"; 
+      }
     })
   }
 
