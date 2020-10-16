@@ -10,6 +10,26 @@
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
+      <ng-template [ngIf]="_loginServ.isLoggedIn()" [ngIfElse]="beforeLogin">
+        <li class="nav-item"> 
+          <a class="nav-link" routerLink="dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item"> 
+          <a class="nav-link" style="cursor: pointer;" (click)="_loginServ.logout()">Logout</a>
+        </li>
+      </ng-template> 
+      <ng-template #beforeLogin>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="signup">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login">Login</a>
+        </li>
+      </ng-template>
+
+
+
+
       <li class="nav-item">
         <a class="nav-link" routerLink="">First</a>
       </li>
@@ -19,15 +39,16 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="product">Product</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="signup">Signup</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="login">Login</a>
-      </li>
+      
+      
+      
       
     </ul>
   </div>
 </nav>
+
+
+
+
 
 <router-outlet></router-outlet>
