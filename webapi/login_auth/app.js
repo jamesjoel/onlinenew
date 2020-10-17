@@ -6,6 +6,7 @@ var MongoClient = require("mongodb").MongoClient;
 var url = "mongodb://localhost:27017";
 var cors = require("cors");
 var jwt = require("jsonwebtoken");
+var mongo = require("mongodb");
 
 app.use(cors());
 app.use(bodyParser());
@@ -59,9 +60,76 @@ app.post("/api/user/login", (req, res)=>{
     })
 });
 
+app.get("/api/user", backdoor, (req, res)=>{
+    //console.log(req.userData);
+    var id = req.userData.id;
+    MongoClient.connect(url, (err, con)=>{
+        var db = con.db("newbatch");
+        db.collection("user").find({ _id : mongo.ObjectId(id)}).toArray((err, result)=>{
+            res.send(result[0]);
+        });
+    });
+});
+
+
+function backdoor(req, res, next)
+{
+    console.log("--------------");
+    if(!req.headers.authorization){
+        res.status(404).send({msg : "Unauthorize User"});
+    }
+    else{
+        if(req.headers.authorization == ""){
+            
+            res.status(404).send({msg : "Unauthorize User"});
+        }
+        else{
+            var token = req.headers.authorization; // wrong token
+
+
+            var userInfo = jwt.verify(token, "my name is james");
+            /*
+            if token is currepted then jwt.verify return "false" otherwise
+            its return data
+
+
+            */
+            if(! userInfo){
+                
+                res.status(404).send({msg : "Unauthorize User"});
+            }
+            else{
+                req.userData = userInfo;
+                next();
+            }
+        }
+    }
+}
+
 
 
 
 app.listen(3000, ()=>{
     console.log("server running");
 })
+
+
+
+
+
+/*
+localhost:3000/api/user
+
+1. authorization 
+2. authorization not empty
+3. authorization correct
+
+
+this._http.get("localhost:3000/api/user", {
+    headers : { Authorization : 5421sdfgsdg111221 }
+});
+
+
+
+
+*/
