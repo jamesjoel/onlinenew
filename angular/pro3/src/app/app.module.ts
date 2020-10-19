@@ -12,6 +12,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { DiscountPipe } from './pipes/discount.pipe';
 
 @NgModule({  
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     SignupComponent,
     LoginComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    DiscountPipe
   ], 
   imports: [
     BrowserModule,
@@ -34,3 +36,45 @@ import { ProfileComponent } from './pages/profile/profile.component';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+/*
+  1. only component can create 4 file (.html, .scss, .ts, .spec.ts)
+      ng g c <compoent name>
+      when compoent create its insert into "declarations" array in module file
+      
+      
+      
+      2. when service create its not insert any array in module.(.ts, .spec.ts)
+      ng g s <service name>
+      "only server you can craete your custome function"
+
+
+      
+      
+      3. when create "guard" then create 2 file (.ts, .spec.ts)
+      ng g g <guard name>
+      "guard" not insert into module but its insert into "routing module"
+      canActivate()
+
+
+
+      4. when create pipe (.ts, .spec.ts)
+      ng g p <pipe name>
+      when pipe create its insert into "declarations" array in module file
+      transform()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
