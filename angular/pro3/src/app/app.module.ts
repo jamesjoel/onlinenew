@@ -13,6 +13,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { DiscountPipe } from './pipes/discount.pipe';
+import { HelloDirective } from './directives/hello.directive';
+import { UploadComponent } from './pages/upload/upload.component';
 
 @NgModule({  
   declarations: [
@@ -24,7 +26,9 @@ import { DiscountPipe } from './pipes/discount.pipe';
     LoginComponent,
     DashboardComponent,
     ProfileComponent,
-    DiscountPipe
+    DiscountPipe,
+    HelloDirective,
+    UploadComponent
   ], 
   imports: [
     BrowserModule,

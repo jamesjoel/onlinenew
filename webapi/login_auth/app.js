@@ -7,9 +7,22 @@ var url = "mongodb://localhost:27017";
 var cors = require("cors");
 var jwt = require("jsonwebtoken");
 var mongo = require("mongodb");
+var fileupload = require("express-fileupload");
 
 app.use(cors());
 app.use(bodyParser());
+app.use(fileupload());
+
+
+app.post("/upload", (req, res)=>{
+    console.log(req.files);
+})
+
+
+
+
+
+
 
 app.post("/api/user/", (req, res)=>{
     req.body.password = sha1(req.body.password);
