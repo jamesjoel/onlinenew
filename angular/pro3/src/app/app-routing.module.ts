@@ -10,6 +10,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UploadComponent } from './pages/upload/upload.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,10 @@ const routes: Routes = [
   {
     path : "upload",
     component : UploadComponent
+  },
+  {
+    path : "reg",
+    component : RegistrationComponent
   }
 ];
 

@@ -1,0 +1,106 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form [formGroup]="user"> 
+            <div class="card mt-4">
+                <div class="card-header">
+                    <h3>Registatrion</h3>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input [ngClass]="{'is-invalid': checkSubmit && user.controls.full_name.errors }"  formControlName="full_name" type="text" class="form-control" />
+                        <div *ngIf="checkSubmit && user.controls.full_name.errors" class="invalid-feedback">
+                            <div *ngIf="user.controls.full_name.errors.required">
+                                Insert Your Full Name
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Username/Email</label>
+                        <input [ngClass]="{'is-invalid' : checkSubmit && user.controls.username.errors }" formControlName="username" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.username.errors">
+                            <div *ngIf="user.controls.username.errors.required"> 
+                                Insert Your Username/Email
+                            </div>
+                            <div *ngIf="user.controls.username.errors.email"> 
+                                Your Email id is not correct 
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input [ngClass]="{'is-invalid': checkSubmit && user.controls.password.errors}" formControlName="password" type="password" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.password.errors">
+                            <div *ngIf="user.controls.password.errors.required">
+                                Insert Your Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Re-Password</label>
+                        <input [ngClass]="{'is-invalid': checkSubmit && user.controls.re_password.errors}" formControlName="re_password" type="password" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.re_password.errors">
+                            <div *ngIf="user.controls.re_password.errors.required">
+                                Insert Your Re-Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea [ngClass]="{'is-invalid': checkSubmit && user.controls.address.errors}" formControlName="address" class="form-control" ></textarea>
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.address.errors">
+                            <div *ngIf="user.controls.address.errors.required">
+                                Insert Your Re-Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>City</label>
+                        <select [ngClass]="{'is-invalid': checkSubmit && user.controls.city.errors}" formControlName="city" class="form-control" >
+                            <option value="">Select</option>
+                            <option value="indore">Indore</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="pune">Pune</option>
+                            <option value="delhi">Delhi</option>
+                        </select>
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.city.errors">
+                            <div *ngIf="user.controls.city.errors.required">
+                                Insert Your Re-Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Contact</label>
+                        <input [ngClass]="{'is-invalid': checkSubmit && user.controls.contact.errors}" formControlName="contact" type="text" class="form-control" />
+                        <div class="invalid-feedback" *ngIf="checkSubmit && user.controls.contact.errors">
+                            <div *ngIf="user.controls.contact.errors.required">
+                                Insert Your Re-Password
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <br />
+                        Male <input formControlName="gender" type="radio" value="male" />
+                        Female <input formControlName="gender" type="radio" value="female" />
+                        <div *ngIf="checkSubmit && user.controls.gender.errors"> 
+                            <div *ngIf="user.controls.gender.errors.required" style="font-size: 80% !important;" class="text-samll text-danger">
+                                Select Your Gender 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button type="submit" (click)="save()" class="btn btn-success">Signup</button>
+                </div>
+            </div>      
+            <br />  
+            <br />  
+            <br />  
+        </form>
+        </div>
+    </div>
+</div>

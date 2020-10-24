@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +17,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { DiscountPipe } from './pipes/discount.pipe';
 import { HelloDirective } from './directives/hello.directive';
 import { UploadComponent } from './pages/upload/upload.component';
+import { RegistrationComponent } from './pages/registration/registration.component';
 
 @NgModule({  
   declarations: [
@@ -28,13 +31,15 @@ import { UploadComponent } from './pages/upload/upload.component';
     ProfileComponent,
     DiscountPipe,
     HelloDirective,
-    UploadComponent
+    UploadComponent,
+    RegistrationComponent
   ], 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
